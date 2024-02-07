@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cida Tour - Create Category</title>
+</head>
+<body>
+    <h1>Create category</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Category</button>
+        </form>
+    </div>
+</body>
+</html>
