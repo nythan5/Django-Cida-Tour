@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 
 
@@ -62,3 +63,14 @@ class TripCustomer(models.Model):
 
     def __str__(self):
         return f"{self.trip_id.title} - {self.customer_id.user_id.username}"
+
+
+class Payment(models.Model):
+    trip_customer_id = models.ForeignKey(
+        TripCustomer, on_delete=models.SET_NULL, null=True, blank=True, default=None)  # noqa
+    value_paid = models.FloatField(default=None)
+    payment_form = models.CharField(max_length=50)
+    is_confirmed = models.BooleanField(default=False)
+    is_refused = models.BooleanField(default=False)
+    confirmed_at = models.DateTimeField(auto_now=True, null=True)
+    refused_at = models.DateTimeField(auto_now=True, null=True)
