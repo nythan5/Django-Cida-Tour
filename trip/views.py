@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import CategoryForm
+
 # Create your views here.
 
 
