@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cida Tour | Registo de Categoria</title>
-</head>
-<body>
-    <h2>Nova Categoria</h2>
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Salvar</button>
-        </form>
-    </div>
-</body>
-</html>
+{% extends 'global/base.html' %}
+
+{% block title %}Cadastrar nova Categoria | {% endblock title %}
+
+{% block content%}
+    <body>
+        <h2>Nova Categoria</h2>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </body>
+{% endblock content %}
+
+
+
